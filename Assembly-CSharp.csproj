@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FE2A8B7C-9AC6-6141-6F07-6A0DB72942BB}</ProjectGuid>
+    <ProjectGuid>{5CFC2F43-60AA-AC25-9018-10A4F5E2606E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,12 +53,16 @@
     <UnityVersion>2021.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AnimateHandOnInput.cs" />
     <Compile Include="Assets\HandData.cs" />
     <Compile Include="Assets\GrabHandPose.cs" />
+    <Compile Include="Assets\Scripts\DebrisManager.cs" />
+    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\ShaderChange.cs" />
+    <Compile Include="Assets\Scripts\TransparencySwitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\hover.shader" />
@@ -805,7 +809,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
-      <Project>{9050875B-F7A0-B759-0332-A7DF5E80A1C9}</Project>
+      <Project>{D4EC0C17-60BC-4DD3-B00A-32F4509FF7B1}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
   </ItemGroup>
