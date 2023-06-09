@@ -7,14 +7,16 @@ TagManager:
   - Mop
   - Left Hand
   - Right Hand
+  - suctionCup
+  - suctionCupPlane
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Origin
   - Water
   - UI
-  - 
+  - Seat
   - 
   - 
   - 
