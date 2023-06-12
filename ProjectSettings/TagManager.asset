@@ -9,6 +9,7 @@ TagManager:
   - Right Hand
   - suctionCup
   - suctionCupPlane
+  - LevelExit
   layers:
   - Default
   - TransparentFX

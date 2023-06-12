@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class ShaderChange : MonoBehaviour
 {
-    public Material material;  //Blur Material
-    public Color baseColor= new Color(222 / 225f, 108 / 225f, 20 / 225f, 1.0f);
-    public Color changeColor= new Color(203 / 225f, 203 / 225f, 203 / 225f, 1.0f);
-    public float emission = 5.0f;
-    public float blurLevel = 0.03f;
+    [SerializeField] private Material material;  //Blur Material
+    [SerializeField] private Color baseColor= new Color(142 / 255f, 125 / 255f, 40 / 255f, 75/255f);
+    [SerializeField] private Color changeColor= new Color(255/ 255f, 255 / 255f, 255 / 255f, 25/255f);
+    [SerializeField] private float blurLevel = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        material.SetColor("_BaseColor", baseColor);
+        material.SetColor("_Color", baseColor);
     }
 
     // Update is called once per frame
@@ -25,13 +23,10 @@ public class ShaderChange : MonoBehaviour
             baseColor.r=(baseColor.r + Time.deltaTime >=changeColor.r) ? changeColor.r : baseColor.r + Time.deltaTime;
             baseColor.g = (baseColor.g + Time.deltaTime >= changeColor.g) ? changeColor.g : baseColor.g +Time.deltaTime;
             baseColor.b = (baseColor.b + Time.deltaTime >= changeColor.b) ? changeColor.b : baseColor.b +Time.deltaTime;
-            material.SetColor("_BaseColor", baseColor);
+            material.SetColor("_Color", baseColor);
 
-            emission =(emission+2*Time.deltaTime>=10f) ? 10f : 2*emission+Time.deltaTime;
-            material.SetFloat("_Emission",emission);
-
-            blurLevel = (blurLevel - 0.1f*Time.deltaTime <=0f) ? 0f : blurLevel - 0.1f * Time.deltaTime;
-            material.SetFloat("_BlurLevel", blurLevel);
+            blurLevel = (blurLevel + 0.1f*Time.deltaTime >=3f) ? 3f : blurLevel +  Time.deltaTime;
+            material.SetFloat("_EdgeThickness", blurLevel);
         }
     }
 }
