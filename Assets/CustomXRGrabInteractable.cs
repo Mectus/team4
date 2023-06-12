@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CustomXRGrabInteractable : MonoBehaviour
 {
-    public float movementSpeed = 1; // Speed of movement
+    public float movementSpeed = 2; // Speed of movement
 
     private GameObject suctionCup;
     private Vector3 previousPosition; // The position of the controller on the previous frame
@@ -15,7 +15,7 @@ public class CustomXRGrabInteractable : MonoBehaviour
     private void Start()
     {
         suctionCup = GameObject.FindGameObjectWithTag("suctionCup");
-        playerObject = GameObject.FindGameObjectWithTag("MainCamera"); // This should now be the XROrigin
+        playerObject = GameObject.FindGameObjectWithTag("LocomotionObject"); // This should now be the XROrigin
 
         if (playerObject == null)
         {
@@ -42,13 +42,14 @@ public class CustomXRGrabInteractable : MonoBehaviour
     private void MovePlayer(Vector3 offset)
     {
         Vector3 movement = offset * movementSpeed; // reverse the direction of movement
+        movement.x = 0;
         movement.y = 0;
-        movement.z = 0;
 
         if (playerObject != null)
         {
             playerObject.transform.position += movement;
-            SuctionCupCollision.start = SuctionCupCollision.end;
+            suctionCup.transform.position = playerObject.transform.position;
+            SuctionCupCollision.start = SuctionCupCollision.end = playerObject.transform.position;
         }
     }
 

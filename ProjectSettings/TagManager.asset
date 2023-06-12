@@ -10,6 +10,7 @@ TagManager:
   - suctionCup
   - suctionCupPlane
   - LevelExit
+  - LocomotionObject
   layers:
   - Default
   - TransparentFX
