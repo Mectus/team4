@@ -13,10 +13,12 @@ public class DestroySphere : MonoBehaviour
     private Renderer suctionCupPlaneRenderer;
     private Bounds suctionCupPlaneBounds;
 
-    public static int collisionCount = 0;
+    private static int collisionCount = 0;
 
     private void Start()
     {
+        collisionCount = 0;
+
         suctionCupPlane = GameObject.FindWithTag("suctionCupPlane");
         if (suctionCupPlane != null)
         {
@@ -46,7 +48,7 @@ public class DestroySphere : MonoBehaviour
         }
 
         // 초기 카운터 텍스트 설정
-        counterText.text = "0/" + sphereCount;
+        counterText.text = "0/" + sphereCount*2;
 
     }
 
@@ -70,13 +72,18 @@ public class DestroySphere : MonoBehaviour
     private void Update()
     {
         // 카운터 업데이트
-        counterText.text = collisionCount + "/" + sphereCount;
+        counterText.text = collisionCount + "/" + sphereCount*2;
 
         // 게임 클리어 체크
-        if (collisionCount >= sphereCount)
+        if (collisionCount >= sphereCount*2)
         {
             // 게임 클리어 Canvas 활성화
             gameClearCanvas.SetActive(true);
         }
+    }
+
+    public static void incrementCollisionCount()
+    {
+        collisionCount++;
     }
 }

@@ -45,6 +45,7 @@ public class SphereManager : MonoBehaviour
             {
                 // 게임 클리어 Canvas 활성화
                 gameClearCanvas.SetActive(true);
+                Time.timeScale = 0.1f; // 게임 일시 정지
             }
         }
     }

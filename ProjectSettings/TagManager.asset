@@ -12,6 +12,8 @@ TagManager:
   - LevelExit
   - LocomotionObject
   - Debris
+  - Sphere
+  - Origin
   layers:
   - Default
   - TransparentFX
